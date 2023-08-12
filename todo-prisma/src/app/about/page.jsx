@@ -1,4 +1,3 @@
-import Link from "next/link";
 
 export default function AboutPage() {
     return (
@@ -12,7 +11,7 @@ export default function AboutPage() {
           Lorem ipsum dolor sit amet, consectetur adip
           Lorem ipsum dolor sit amet, consectetur adip
         </p>
-        <Link href={'/'}>Home</Link>
+      
       </div>
     )
   }

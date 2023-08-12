@@ -1,8 +1,11 @@
-import Link from "next/link"
+"use client"
 
+import Link from "next/link"
+import {usePathname} from "next/navigation"
 
 export default function Header() {
 
+    const pathname = usePathname()
     const navItem =[
         {
             label: 'Home',
@@ -15,6 +18,10 @@ export default function Header() {
         {
             label: 'FAQ',
             href:'/about/faq'  
+        },
+        {
+            label: 'Posts',
+            href:'/posts'  
         }
     ]
   return (
@@ -22,7 +29,10 @@ export default function Header() {
         <ul className="flex gap-5 py-10">
             {navItem.map((link, index)=>(
                 <li key={index}>
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link href={link.href}
+                     className={pathname === `${link.href}`? "text-blue-500 font-bold":""}>
+                        {link.label}
+                        </Link>
                 </li>
             ))}
         </ul>

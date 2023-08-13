@@ -8,8 +8,17 @@ async function getPostsData(){
     return res.json()
 }
 
+async function getPostsUser(){
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users`)
+
+  await new Promise((resolve) => setTimeout( resolve,3000))
+  
+    return res.json()
+}
+
  const posts = async ()=> {
     const posts = await getPostsData()
+    // const [posts, users]= await promise.all([getPostsData()])
 
   return (
     <div>
